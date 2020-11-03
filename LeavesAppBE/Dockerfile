@@ -1,4 +1,4 @@
-FROM python:3-alpine
+FROM python:3-buster
 
 RUN mkdir -p /app/src
 
@@ -13,4 +13,4 @@ COPY . .
 EXPOSE 8000
 
 #Start app
-CMD ["python3", "manage.py", "runserver"]
+CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
