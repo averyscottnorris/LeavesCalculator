@@ -8,7 +8,7 @@ RUN mkdir -p /app/src
 WORKDIR /app/src
 
 #copy and install dependencies
-COPY package*.json .
+COPY package*.json /app/src/
 RUN npm install
 
 COPY . .
