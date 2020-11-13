@@ -21,6 +21,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'zwdpp#6&!uk)l$nd6y8ajzqkz5$bg^@v5&*!&cvfy&2&lwox&v'
+#Generate a new key with this python code:
+#>>> import random
+#>>> ''.join(random.SystemRandom().choice('abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)') for i in range(50))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
