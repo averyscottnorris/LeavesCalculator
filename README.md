@@ -1,17 +1,37 @@
-# LeavesCalculator
+# LeavesCalculator v.1.0.1
 This is the repository for a web app that is designed for Portland State University's HR department
-to assist PSU employees with determining the amount and types of leave they are eligible for.
+to assist PSU employees with determining the amount and types of leave they are eligible for. This forked 
+version has been modified from the original to run as 2 docker containers, one for the Vue.js frontend
+and one for the Django backend.
 
 This app uses Django, REST, Vue.js, NPM, and SQLite3 frameworks, and is released under MIT license.
 
-## Cloning the project
-1. Change directory to where you want the LeavesCalculator directory to be created
-2. Run `git clone https://github.com/leavescalculator/LeavesCalculator.git`
+## Getting Started - The Quick Method
+Follow these instructions if you just want to get the app running quickly and easily:
+1. Docker will be required, download it here: https://docs.docker.com/get-docker/
+2. In your terminal, type the following two commands sequentially (they will pull the application
+down from the docker hub and run them in the background of your terminal):
+<br>`docker run -d averyscottnorris/leavesappdjango`
+<br>`docker run -d averyscottnorris/leavesappvue`
+3. Open your web browser and navigate to localhost:8080
+4. And that's it! See the "Using the App" section below for more information about using the application
+5. Use `docker ps` to view running containers, and `docker stop [CONTAINER_ID]` to stop each container
 
-## Getting Started
-1. Change directory into the LeavesCalculator directory and run the following commands:
-2. `./start` Runs a script that will install dependencies and spin up Django and Vue servers
-3. `./start install` Will install dependencies without running the servers
-4. `./start run` Will spin up the servers without attempting to install dependencies
-5. Make changes to the code base as you require
-6. To kill the servers, use control+C to exit the script, which will in turn kill the servers
+## Getting Started - Cloning the project
+If you want to make modifications to the project, follow these steps:
+1. Docker will be required, download it here: https://docs.docker.com/get-docker/ 
+2. Docker-compose will be required (may be bundled with docker): https://docs.docker.com/compose/install/
+3. Change directory to where you want the LeavesCalculator directory to be created
+4. Run: `git clone https://github.com/averyscottnorris/LeavesCalculator.git`
+5. Make modifications to the code as desired, and rebuild and run the images with the command: `docker-compose up -d`
+6. The application is now running! Open your web browser and navigate to localhost:8080 to view the app
+7. Use `docker-compose down` to spin the containers back down when finished.
+
+## Using the App
+Now that the app's running, you can play around with it!
+1. Login as a user to walk through the question graph (user: adent pass: 1234)
+2. Login as admin (user: admin pass: 1234) and use the "Admin" tab to modify the question flow graph
+
+## NOTES
+1. Remember to change the Django "SECRET_KEY" in LeavesAppBE/settings.py
+2. Depending on your docker installation, you may need to prepend `sudo` to your docker commands.

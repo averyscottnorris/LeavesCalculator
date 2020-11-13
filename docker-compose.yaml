@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+    vue:
+        build: LeavesAppFE/.
+        image: averyscottnorris/leavesappvue
+        ports:
+            - "8080:8080"
+    django:
+        build: LeavesAppBE/.
+        image: averyscottnorris/leavesappdjango
+        ports:
+            - "8000:8000"
