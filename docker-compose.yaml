@@ -4,7 +4,7 @@ services:
         build: LeavesAppFE/.
         image: averyscottnorris/leavesappvue
         ports:
-            - "8080:8080"
+            - "80:8080"
     django:
         build: LeavesAppBE/.
         image: averyscottnorris/leavesappdjango
